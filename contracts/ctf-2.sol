@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.4.21;
 
 /**
@@ -6,7 +7,7 @@ pragma solidity ^0.4.21;
  * Comments:
  * This token contract allows you to buy and sell tokens at an even exchange rate of 1 token per ether.
  * The contract starts off with a balance of 1 ether. See if you can take some of that away.
- * Target: 
+ * Target:
  * Find a way to steal some tokens of the contract balance
  * Solution to task in test/ctf-2.sol
  */
@@ -14,7 +15,7 @@ contract TokenSaleChallenge {
     mapping(address => uint256) public balanceOf;
     uint256 constant PRICE_PER_TOKEN = 1 ether;
 
-    constructor () public payable {
+    constructor() public payable {
         require(msg.value == 1 ether);
     }
 

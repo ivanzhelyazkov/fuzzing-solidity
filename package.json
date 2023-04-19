@@ -1,8 +1,14 @@
 {
-  "name": "erc-721-variations",
+  "name": "fuzzing-solidity",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "ctf1": "solc-select use 0.4.25 && echidna test/ctf-1.sol --contract TestWhale",
+    "ctf2": "solc-select use 0.4.25 && echidna test/ctf-2.sol --contract TestTokenSale --config echidna-config/ctf-2.yml",
+    "ctf3": "solc-select use 0.8.19 && echidna test/ctf-3.sol --contract TestDex --config echidna-config/ctf-3.yml",
+    "format": "prettier --check --write test/**/*.sol contracts/**/*.sol"
+  },
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -17,9 +23,6 @@
     "prettier-plugin-solidity": "^1.1.3",
     "typechain": "^8.1.1",
     "typescript": "^4.9.5"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Ivan Zhelyazkov",

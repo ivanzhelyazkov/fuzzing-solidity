@@ -1,12 +1,13 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.4.21;
 
 /**
  * CTF from capturetheether.com
  * https://capturetheether.com/challenges/math/token-whale/
  * Comments:
- * This ERC20-compatible token is hard to acquire. 
+ * This ERC20-compatible token is hard to acquire.
  * There’s a fixed supply of 1,000 tokens, all of which are yours to start with.
- * Target: 
+ * Target:
  * Find a way to accumulate at least 1,000,000 tokens to solve this challenge.
  * Solution to task in test/ctf-1.sol
  */
@@ -21,7 +22,7 @@ contract TokenWhaleChallenge {
     string public symbol = "SET";
     uint8 public decimals = 18;
 
-    function TokenWhaleChallenge (address _player) public {
+    function TokenWhaleChallenge(address _player) public {
         player = _player;
         totalSupply = 1000;
         balanceOf[player] = 1000;
@@ -47,7 +48,11 @@ contract TokenWhaleChallenge {
         _transfer(to, value);
     }
 
-    event Approval(address indexed owner, address indexed spender, uint256 value);
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
 
     function approve(address spender, uint256 value) public {
         allowance[msg.sender][spender] = value;

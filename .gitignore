@@ -1,0 +1,6 @@
+# Echidna files
+coverage
+crytic-export
+
+# packages
+node_modules
